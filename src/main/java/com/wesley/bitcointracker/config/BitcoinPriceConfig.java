@@ -1,7 +1,7 @@
 package com.wesley.bitcointracker.config;
 
 import com.wesley.bitcointracker.service.BitcoinPriceService;
-import com.wesley.bitcointracker.service.CoinMarketCapBitcoinPriceService;
+import com.wesley.bitcointracker.service.BitcoinPriceServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,7 +10,7 @@ public class BitcoinPriceConfig {
 
     @Bean
     public BitcoinPriceService bitcoinPriceService() {
-        return new CoinMarketCapBitcoinPriceService();
+        return new BitcoinPriceServiceImpl();
     }
 
 }
