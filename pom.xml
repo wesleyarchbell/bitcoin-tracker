@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wesley</groupId>
-	<artifactId>bitcoin-tracker</artifactId>
+	<artifactId>bitcoin-tracker-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bitcoin-tracker</name>
-	<description>Bitcoin Tracker</description>
+	<name>bitcoin-tracker-server</name>
+	<description>Bitcoin Tracker Server</description>
 
 	<properties>
 		<java.version>1.8</java.version>
