@@ -35,9 +35,6 @@ public final class BitcoinPriceServiceImpl implements BitcoinPriceService {
     @Value("${current_price_url}")
     private String currentPriceUrl;
 
-    @Value("${coinmarketcap_api_key}")
-    private String apiKey;
-
     private final RestTemplate restTemplate;
 
 
