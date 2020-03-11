@@ -1,8 +1,15 @@
-The application provides the backend services which is required by the bitcoin tracker frontend application.
+The application is a bitcoin tracker which can show current and historical prices.
+The data is provided via the free coindesk API.
+
 It makes use of the following technologies:
 
 * SpringBoot
+* React-JS 
+* Axois
+* Reactstrap
 
-It provides the backend services to serve the data which is required for the charts on the front-end.
-The data is provided via the free coindesk API.
+It provides the user with the following charts:
+
+* Current Bitcoin Price which gets updated every minute
+* Historical Bitcoin Price which retrieves the last 30 days of prices.
 
