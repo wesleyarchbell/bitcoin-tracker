@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BitcoinChart Render chart 1`] = `
+<Line
+  data={
+    Object {
+      "datasets": Array [
+        Object {
+          "backgroundColor": undefined,
+          "borderColor": undefined,
+          "borderWidth": 5,
+          "data": Array [
+            3435.22,
+          ],
+          "fill": "none",
+          "label": "Test Chart",
+          "lineTension": 0,
+          "pointRadius": 1,
+        },
+      ],
+      "labels": Array [
+        "2012-01-1 01:01:01",
+      ],
+    }
+  }
+/>
+`;

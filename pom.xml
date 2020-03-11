@@ -9,14 +9,108 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.wesley</groupId>
-	<artifactId>bitcoin-tracker-server</artifactId>
+	<artifactId>bitcoin-tracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bitcoin-tracker-server</name>
-	<description>Bitcoin Tracker Server</description>
+	<name>bitcoin-tracker</name>
+	<description>Bitcoin Tracker</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>dev</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+			<build>
+				<plugins>
+					<!-- install, test and build frontend -->
+					<plugin>
+						<groupId>com.github.eirslett</groupId>
+						<artifactId>frontend-maven-plugin</artifactId>
+						<version>1.9.1</version>
+						<configuration>
+							<workingDirectory>${basedir}/src/main/js/frontend</workingDirectory>
+						</configuration>
+						<executions>
+							<execution>
+								<id>install node and npm</id>
+								<goals>
+									<goal>install-node-and-npm</goal>
+								</goals>
+                                <configuration>
+                                    <nodeVersion>v10.0.0</nodeVersion>
+                                    <npmVersion>6.1.0</npmVersion>
+                                </configuration>
+							</execution>
+							<execution>
+								<id>npm install</id>
+								<goals>
+									<goal>npm</goal>
+								</goals>
+								<phase>generate-resources</phase>
+							</execution>
+							<execution>
+								<id>npm test</id>
+								<goals>
+									<goal>npm</goal>
+								</goals>
+								<phase>test</phase>
+								<configuration>
+									<arguments>test</arguments>
+									<environmentVariables>
+										<CI>true</CI>
+									</environmentVariables>
+								</configuration>
+							</execution>
+							<execution>
+								<id>npm build</id>
+								<goals>
+									<goal>npm</goal>
+								</goals>
+								<phase>compile</phase>
+								<configuration>
+									<arguments>build</arguments>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- copy frontend assets -->
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-resources</id>
+								<phase>process-classes</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${basedir}/target/classes/static</outputDirectory>
+									<resources>
+										<resource>
+											<directory>${basedir}/src/js/frontend/build</directory>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<dependencies>
 		<dependency>
