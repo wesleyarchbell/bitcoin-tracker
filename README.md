@@ -5,8 +5,9 @@ The data is provided via the free coindesk API.
 
 It makes use of the following technologies:
 
-* SpringBoot
-* React-JS 
+* Spring-Boot (Back-end) 
+  * json-simple
+* React-JS (Front-end)
   * axois
   * boostrap/reactstrap
   * chart.js/react-chartjs-2
