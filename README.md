@@ -31,8 +31,8 @@ Then navigate to: http://localhost:8080
 mvn spring-boot:run
 ```
 REST services available
-http://localhost:8080/prices/latest
-http://localhost:8080/prices/hisorical
+* http://localhost:8080/prices/latest
+* http://localhost:8080/prices/hisorical
 
 ## Running front-end standalone
 ```
