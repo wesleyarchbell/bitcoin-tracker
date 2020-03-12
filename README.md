@@ -41,3 +41,16 @@ npm install
 npm start
 ```
 Then navigate to: http://localhost:3000
+
+## Pull and run from docker
+
+Pull image from docker hub:
+```
+docker pull wesleyarchbell/bitcoin-tracker:0.1
+```
+
+Run docker image:
+```
+docker run -p 8080:8080 wesleyarchbell/bitcoin-tracker:0.1
+```
+Then navigate to: http://localhost:8080
