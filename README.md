@@ -42,7 +42,7 @@ npm start
 ```
 Then navigate to: http://localhost:3000
 
-## Pull and run from docker
+## Run from Docker
 
 Pull image from docker hub:
 ```
