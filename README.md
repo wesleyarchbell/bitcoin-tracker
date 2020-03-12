@@ -6,12 +6,10 @@ It makes use of the following technologies:
 * SpringBoot
 * React-JS 
   * axois
-  * reactstrap
-  * react-chartjs-2
-  * redux
-  * boostrap
-  * jest (test)
-  * enzyme (test)
+  * boostrap/reactstrap
+  * chart.js/react-chartjs-2
+  * redux/redux-thunk
+  * jest/enzyme (test)
 
 The application provides the user with the following charts:
 
