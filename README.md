@@ -6,12 +6,12 @@ The data is provided via the free coindesk API.
 It makes use of the following technologies:
 
 * Spring-Boot (Back-end) 
-  * json-simple
+  * json-simple (message parsing)
 * React-JS (Front-end)
-  * axois
-  * boostrap/reactstrap
-  * chart.js/react-chartjs-2
-  * redux/redux-thunk
+  * axois (ajax)
+  * boostrap/reactstrap (styling)
+  * chart.js/react-chartjs-2 (charts)
+  * redux/redux-thunk (state management)
   * jest/enzyme (test)
 
 The application provides the user with the following charts:
